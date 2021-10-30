@@ -11,6 +11,8 @@
       until: download_kafka is succeeded  
     - name: Use gzip to compress a single archive (i.e don't archive it first with tar)
       community.general.archive:
+        become: true
         path: /tmp/kafka-3.0.0-src.tgz
         dest: /tmp/kafka-3.0.0-src.tgz
         format: gz
+        
