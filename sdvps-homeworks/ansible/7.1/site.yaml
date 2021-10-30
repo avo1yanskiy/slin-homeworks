@@ -44,7 +44,7 @@
     - name: Add line
       become: yes
       ansible.builtin.lineinfile:
-      path: /etc/profile
-      line: /usr/local/sbin/dymotd.sh
-      
+        path: /etc/profile
+        line: /usr/local/sbin/dymotd.sh
+
 
