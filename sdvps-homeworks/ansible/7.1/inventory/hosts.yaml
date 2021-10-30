@@ -5,18 +5,18 @@ all:
       ansible_host: 172.29.251.69
     server-02:
       ansible_host: 172.29.251.69
-  vars:
+prod:
+  hosts:
+    server-01:
+      ansible_host: 172.29.251.69
+    server-02:
+      ansible_host: 172.29.251.69
+test:
+  hosts:
+    server-01:
+      ansible_host: 172.29.251.69
+    server-02:
+      ansible_host: 172.29.251.69
+vars:
     ansible_connection: ssh
     ansible_user: vagrant
-  prod:
-    hosts:
-      server-01:
-      ansible_host: 172.29.251.69
-      server-02:
-      ansible_host: 172.29.251.69
-  test:
-    hosts:
-      server-01:
-      ansible_host: 172.29.251.69
-      server-02:
-      ansible_host: 172.29.251.69
