@@ -1,6 +1,9 @@
 ---
 all:
   hosts:
+  vars:
+    ansible_connection: ssh
+    ansible_user: vagrant
     server-01:
       ansible_host: 178.154.252.126
     server-02:
@@ -17,6 +20,3 @@ test:
       ansible_host: 178.154.252.126
     server-02:
       ansible_host: 178.154.255.6
-vars:
-    ansible_connection: ssh
-    ansible_user: vagrant
