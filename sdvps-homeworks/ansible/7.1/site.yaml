@@ -10,7 +10,8 @@
      #register: download_kafka
      #until: download_kafka is succeeded  
     - name: Unarchive zip Kafka
-      unarchive:
+      ansible.builtin.unarchive:
         src: /tmp/kafka-3.0.0-src.tgz
         dest: /tmp
+        remote_src: yes
         
