@@ -31,13 +31,11 @@
 - name: Motd
   hosts: prod
   tasks:
-    - name: Change Motd
-        copy:
-        dest: "/etc/update-motd.d/99-netology"
-        content: |
-          Hello, netology
-          wellcome server
+    - name: Upload file containing binaries from local storage
+      copy:
+        src: "{{ dymotd }}"
+        dest: /usr/src/scripts     
     - name: Chmod 99-netology
-        ansible.builtin.file:
-        path: /etc/update-motd.d/99-netology
-        mode: '755'
+      ansible.builtin.file:
+      path: /usr/src/scripts/dymotd
+      mode: '755'
