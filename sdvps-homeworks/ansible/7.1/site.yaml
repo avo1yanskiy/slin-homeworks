@@ -37,8 +37,7 @@
       content: |
         Hello, netology
         wellcome server
-    - name: Chmod
-      - name: Chmod 99-netology
-        ansible.builtin.file:
+    - name: Chmod 99-netology
+      ansible.builtin.file:
         path: /etc/update-motd.d/99-netology
         mode: '755'
