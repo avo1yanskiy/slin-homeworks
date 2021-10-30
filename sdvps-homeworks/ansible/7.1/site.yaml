@@ -32,12 +32,12 @@
   hosts: prod
   tasks:
     - name: Change Motd
-      copy:
-      dest: "/etc/update-motd.d/99-netology"
-      content: |
-        Hello, netology
-        wellcome server
+        copy:
+        dest: "/etc/update-motd.d/99-netology"
+        content: |
+          Hello, netology
+          wellcome server
     - name: Chmod 99-netology
-      ansible.builtin.file:
+        ansible.builtin.file:
         path: /etc/update-motd.d/99-netology
         mode: '755'
