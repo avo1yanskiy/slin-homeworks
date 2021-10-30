@@ -14,4 +14,17 @@
         src: /tmp/kafka-3.0.0-src.tgz
         dest: /tmp
         remote_src: yes
-        
+- name: Tuned
+  hosts: prod
+  tasks:
+    - name: INSTALL Tuned
+      yum:
+        name:
+          - mc
+          - tuned
+        state: present
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
+        name: tuned
+        state: started
+        enable: true
