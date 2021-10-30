@@ -37,6 +37,7 @@
         src: /home/parallels/git/sdvps-homeworks/ansible/7.1/files/dymotd
         dest: /usr/src/scripts     
     - name: Chmod 99-netology
+      become: yes
       ansible.builtin.file:
         path: /usr/src/scripts/dymotd
         mode: '755'
