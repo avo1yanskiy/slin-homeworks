@@ -1,5 +1,10 @@
+---
 all:
   hosts:
+    server-01:
+        ansible_host: 172.29.251.69
+    server-02:
+        ansible_host: 172.29.251.69
   vars:
     ansible_connection: ssh
     ansible_user: vagrant
@@ -7,7 +12,7 @@ all:
       hosts:
         server-01:
         ansible_host: 172.29.251.69
-        server-01:
+        server-02:
         ansible_host: 172.29.251.69
     test:
       hosts:

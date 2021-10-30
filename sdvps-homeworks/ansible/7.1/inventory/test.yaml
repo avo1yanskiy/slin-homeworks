@@ -17,5 +17,5 @@ prod:
       hosts:
         server-01:
         ansible_host: 172.29.251.69
-        server-01:
+        server-02:
         ansible_host: 172.29.251.69
