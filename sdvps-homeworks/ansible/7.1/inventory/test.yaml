@@ -1,0 +1,15 @@
+---
+all:
+ hosts:
+elasticsearch:
+ hosts:
+  el-instance:
+   ansible_host: 172.29.251.69
+kibana:
+ hosts:
+  k-instance:
+   ansible_host: 172.29.249.243
+app:
+ hosts:
+  application-instance:
+   ansible_host: 172.29.243.48
