@@ -34,10 +34,10 @@
     - name: Upload file containing binaries from local storage
       become: yes
       copy:
-        src: /home/parallels/git/sdvps-homeworks/ansible/7.1/files/dymotd
-        dest: /usr/src/scripts     
+        src: /home/parallels/git/sdvps-homeworks/ansible/7.1/files/dymotd.sh
+        dest: /usr/local/sbin/    
     - name: Chmod 99-netology
       become: yes
       ansible.builtin.file:
-        path: /usr/src/scripts/dymotd
+        path: /usr/local/sbin/dymotd.sh
         mode: '755'
