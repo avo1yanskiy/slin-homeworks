@@ -6,13 +6,11 @@
       get_url:
         url: https://www.apache.org/dyn/closer.cgi?path=/kafka/3.0.0/kafka-3.0.0-src.tgz
         dest: /tmp/kafka-3.0.0-src.tgz
-        mode: '0440'
-      register: download_kafka
-      until: download_kafka is succeeded  
-    - name: Use gzip to compress a single archive (i.e don't archive it first with tar)
-      community.general.archive:
-        become: true
-        path: /tmp/kafka-3.0.0-src.tgz
-        dest: /tmp/kafka-3.0.0-src.tgz
-        format: gz
+     #  mode: '0440'
+     #register: download_kafka
+     #until: download_kafka is succeeded  
+    - name: Unarchive zip Kafka
+      unarchive:
+        src: kafka-3.0.0-src.tgz
+        dest: /tmp
         
