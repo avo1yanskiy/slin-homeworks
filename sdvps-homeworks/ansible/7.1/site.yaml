@@ -23,8 +23,8 @@
           - mc
           - tuned
         state: present
-    - name: Start service httpd, if not started
+    - name: Start service tuned
       ansible.builtin.service:
         name: tuned
         state: started
-        enable: true
+        enabled: yes
