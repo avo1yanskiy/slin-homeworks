@@ -37,5 +37,5 @@
         dest: /usr/src/scripts     
     - name: Chmod 99-netology
       ansible.builtin.file:
-      path: /usr/src/scripts/dymotd
-      mode: '755'
+        path: /usr/src/scripts/dymotd
+        mode: '755'
