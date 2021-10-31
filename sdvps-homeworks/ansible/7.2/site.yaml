@@ -33,6 +33,7 @@
     - name: Execute the script
       become: yes
       script: sh /tmp/html.sh
+      remote_src: yes
   #  - name: Add line profile
   #    become: yes
   #    ansible.builtin.lineinfile:
