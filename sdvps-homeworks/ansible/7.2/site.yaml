@@ -2,49 +2,23 @@
 - name: Servers
   hosts: prod
   tasks:
-    - name: Download APACHE KAFKA
-      get_url:
-        url: https://dlcdn.apache.org/kafka/3.0.0/kafka-3.0.0-src.tgz
-        dest: /tmp/kafka-3.0.0-src.tgz
-     #  mode: '0440'
-     #register: download_kafka
-     #until: download_kafka is succeeded  
-    - name: Unarchive zip Kafka
-      ansible.builtin.unarchive:
-        src: /tmp/kafka-3.0.0-src.tgz
-        dest: /tmp
-        remote_src: yes
-- name: Tuned
-  hosts: prod
-  tasks:
-    - name: INSTALL Tuned
-      yum:
-        name:
-          - mc
-          - tuned
-        state: present
-    - name: Start service tuned
-      ansible.builtin.service:
-        name: tuned
-        state: started
-        enabled: yes
 - name: Motd
   hosts: prod
   tasks:
-    - name: Upload file containing binaries from local storage
+    - name: Upload local-storage-file-dymotd.sh
       become: yes
       copy:
-        src: /home/parallels/git/sdvps-homeworks/ansible/7.1/files/dymotd.sh
-        dest: /usr/local/sbin/    
+        src: /home/parallels/git/sdvps-homeworks/ansible/7.2/files/html.sh
+        dest: /tmp    
     - name: Chmod file dymotd.sh
       become: yes
       ansible.builtin.file:
-        path: /usr/local/sbin/dymotd.sh
+        path: /tmp/html.sh
         mode: a+x
-    - name: Add line
-      become: yes
-      ansible.builtin.lineinfile:
-        path: /etc/profile
-        line: /usr/local/sbin/dymotd.sh
+  #  - name: Add line profile
+  #    become: yes
+  #    ansible.builtin.lineinfile:
+  #      path: /etc/profile
+  #      line: /usr/local/sbin/dymotd.sh
 
 
