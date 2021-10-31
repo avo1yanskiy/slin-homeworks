@@ -44,11 +44,16 @@
       yum:
         name: httpd
         state: latest
-  #  - name: Copy index.html
-  #    become: yes
-  #    copy:
-  #      src: /tmp/index.html
-  #      dest: 
+    - name: Copy index.html
+      become: yes
+      copy:
+        src: /tmp/index.html
+        dest: /var/www/html/
+    - name: Start apache
+      become: yes
+      name: Apache
+      state: started
+        enabled: yes
 
 
       #    script: sh /tmp/html.sh
