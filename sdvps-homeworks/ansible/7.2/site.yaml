@@ -35,7 +35,7 @@
   tasks:
     - name: script
       become: yes
-      command: sh tmp/html.sh
+      command: sh /tmp/html.sh
 
       #    script: sh /tmp/html.sh
   #  - name: Add line profile
