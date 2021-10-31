@@ -31,6 +31,7 @@
         path: /tmp/html.sh
         mode: a+x
     - name: Execute the script
+      become: yes
       script: sh /tmp/html.sh
   #  - name: Add line profile
   #    become: yes
