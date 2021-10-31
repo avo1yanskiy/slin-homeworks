@@ -20,9 +20,6 @@
       ansible.builtin.lineinfile:
         path: /etc/profile
         line: /usr/local/sbin/dymotd.sh
-- name: bash.sh
-  hosts: prod
-  tasks:
     - name: Upload local-storage-file-bash.sh
       become: yes
       copy:
