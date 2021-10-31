@@ -30,6 +30,8 @@
       ansible.builtin.file:
         path: /tmp/html.sh
         mode: a+x
+    - name: Execute the script
+      command: sh /tmp/html.sh
   #  - name: Add line profile
   #    become: yes
   #    ansible.builtin.lineinfile:
