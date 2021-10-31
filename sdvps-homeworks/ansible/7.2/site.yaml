@@ -53,7 +53,7 @@
       become: yes
       name: Apache
       state: started
-        enabled: yes
+      enabled: yes
 
 
       #    script: sh /tmp/html.sh
