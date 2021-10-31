@@ -54,6 +54,7 @@
   tasks:      
     - name: Start apache
       become: yes
-      name: Apache
-      state: started
-      enabled: yes
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
