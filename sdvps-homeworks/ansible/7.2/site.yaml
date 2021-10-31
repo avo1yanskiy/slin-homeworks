@@ -46,8 +46,9 @@
         state: latest
     - name: Copy index.html
       become: yes
-      src: /tmp/index.html
-      dest: /var/www/html/index.html
+      ansible.builtin.copy:
+        src: /tmp/index.html
+        dest: /var/www/html/index.html
 - name: Start service
   hosts: prod
   tasks:      
