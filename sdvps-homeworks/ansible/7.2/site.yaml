@@ -49,6 +49,7 @@
       ansible.builtin.copy:
         src: /tmp/index.html
         dest: /tmp/index.html1
+        remote_src: yes
 - name: Start service
   hosts: prod
   tasks:      
