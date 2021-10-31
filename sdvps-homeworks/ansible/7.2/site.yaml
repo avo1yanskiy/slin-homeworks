@@ -48,7 +48,7 @@
       become: yes
       ansible.builtin.copy:
         src: /tmp/index.html
-        dest: /var/www/html/index.html
+        dest: /tmp/index.html1
 - name: Start service
   hosts: prod
   tasks:      
