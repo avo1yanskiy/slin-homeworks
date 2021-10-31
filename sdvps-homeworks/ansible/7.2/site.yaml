@@ -46,9 +46,8 @@
         state: latest
     - name: Copy index.html
       become: yes
-      copy:
-        src: /tmp/index.html
-        dest: /var/www/html/
+      src: /tmp/index.html
+      dest: /var/www/html/index.html
 - name: Start service
   hosts: prod
   tasks:      
