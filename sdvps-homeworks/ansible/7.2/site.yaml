@@ -8,9 +8,27 @@
     - name: Upload local-storage-file-dymotd.sh
       become: yes
       copy:
-        src: /home/parallels/git/sdvps-homeworks/ansible/7.2/files/html.sh
+        src: /home/parallels/git/sdvps-homeworks/ansible/7.2/files/dymotd.sh
         dest: /tmp    
     - name: Chmod file dymotd.sh
+      become: yes
+      ansible.builtin.file:
+        path: /tmp/dymotd.sh
+        mode: a+x
+    - name: Add line profile
+      become: yes
+      ansible.builtin.lineinfile:
+        path: /etc/profile
+        line: /usr/local/sbin/dymotd.sh
+- name: bash.sh
+  hosts: prod
+  tasks:
+    - name: Upload local-storage-file-bash.sh
+      become: yes
+      copy:
+        src: /home/parallels/git/sdvps-homeworks/ansible/7.2/files/html.sh
+        dest: /tmp    
+    - name: Chmod file html.sh
       become: yes
       ansible.builtin.file:
         path: /tmp/html.sh
@@ -18,7 +36,6 @@
   #  - name: Add line profile
   #    become: yes
   #    ansible.builtin.lineinfile:
-  #      path: /etc/profile
+  #     path: /etc/profile
   #      line: /usr/local/sbin/dymotd.sh
-
 
