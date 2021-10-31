@@ -49,17 +49,11 @@
       copy:
         src: /tmp/index.html
         dest: /var/www/html/
+  - name: Start service
+    hosts: prod
+    tasks:      
     - name: Start apache
       become: yes
       name: Apache
       state: started
       enabled: yes
-
-
-      #    script: sh /tmp/html.sh
-  #  - name: Add line profile
-  #    become: yes
-  #    ansible.builtin.lineinfile:
-  #     path: /etc/profile
-  #      line: /usr/local/sbin/dymotd.sh
-
