@@ -25,8 +25,8 @@
     src: /tmp/index.html
     dest: /var/www/html/
     remote_src: yes
-- name: Restart everything
+- name: Restart service httpd, in all cases
   ansible.builtin.service:
-  name: httpd
+    name: httpd
     state: started
     enable: yes
