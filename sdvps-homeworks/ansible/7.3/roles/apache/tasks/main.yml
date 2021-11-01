@@ -29,4 +29,4 @@
   ansible.builtin.service:
     name: httpd
     state: started
-    enable: yes
+    enabled: yes
