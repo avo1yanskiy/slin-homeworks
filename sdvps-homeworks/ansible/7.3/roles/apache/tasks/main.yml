@@ -27,4 +27,4 @@
     remote_src: yes
 - name: Restart everything
   ansible.builtin.command: echo "this task will restart the web services"
-    notify: "restart web services"
+  notify: restart web services
