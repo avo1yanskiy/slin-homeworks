@@ -27,5 +27,6 @@
     remote_src: yes
 - name: Restart service httpd, in all cases
   ansible.builtin.service:
+  become: yes
     name: httpd
     state: started
