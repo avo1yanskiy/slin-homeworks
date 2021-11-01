@@ -1,4 +1,0 @@
----
-# tasks file for apache
-- import_tasks: precheck.yml
-- import_tasks: configure.yml

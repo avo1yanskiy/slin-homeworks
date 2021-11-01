@@ -1,6 +1,0 @@
----
-- name: Install Apache
-  become: true
-  apt:
-    httpd
-    state: present

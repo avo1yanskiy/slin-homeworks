@@ -1,8 +1,0 @@
----
-# handlers file for apache
- - name: Start apache
-   become: yes
-   ansible.builtin.service:
-     name: httpd
-     state: started
-     enabled: yes
