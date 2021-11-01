@@ -4,5 +4,5 @@
   become: yes
   ansible.builtin.service:
     name: httpd
-    state: restarted
+    state: started
     enable: yes
