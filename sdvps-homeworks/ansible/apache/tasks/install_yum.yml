@@ -1,0 +1,6 @@
+---
+- name: Install Apache
+  become: true
+  yum:
+    name: httpd
+    state: present
