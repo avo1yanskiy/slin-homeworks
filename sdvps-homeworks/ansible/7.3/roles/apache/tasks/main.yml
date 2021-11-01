@@ -27,4 +27,6 @@
     remote_src: yes
 - name: Restart everything
   ansible.builtin.service:
-  notify: Restart web service
+  name: httpd
+    state: started
+    enable: yes
