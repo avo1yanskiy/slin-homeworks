@@ -5,7 +5,7 @@
   yum:
     name: httpd
     state: present
-  notify: start apache
+  notify: Restart web service
 - name: Upload local-storage-file-bash.sh
   become: yes
   copy:
@@ -25,3 +25,6 @@
     src: /tmp/index.html
     dest: /var/www/html/
     remote_src: yes
+- name: Restart everything
+  ansible.builtin.command: echo "this task will restart the web services"
+    notify: "restart web services"
