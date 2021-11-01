@@ -26,5 +26,5 @@
     dest: /var/www/html/
     remote_src: yes
 - name: Restart everything
-  ansible.builtin.command: echo "this task will restart the web services"
+  ansible.builtin.service:
   notify: Restart web service
