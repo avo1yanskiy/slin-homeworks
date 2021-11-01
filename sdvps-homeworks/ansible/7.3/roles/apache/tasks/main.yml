@@ -24,3 +24,4 @@
     src: /tmp/index.html
     dest: /var/www/html/
     remote_src: yes
+  notify: Start apache
