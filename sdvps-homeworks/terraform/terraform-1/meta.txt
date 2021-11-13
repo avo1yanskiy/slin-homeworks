@@ -5,4 +5,4 @@ users:
    shell: /bin/bash
    sudo: ['ALL=(ALL) NOPASSWD:ALL']
    ssh-authorized-keys:
-     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzfugSZeZzVVCk45oRDeipXd5jMKjelVQZ+f6qgvvFpP1TUi1FqkHIfSE63GfdVV1mOTC29FCySe6U1+yv3Lz9TjuU1yeR2Tryy+Yj5ZbKtR3FH4yw3aqP2AQxSHogUxsGnjBqmOL78DNIBTWjbhOgkLfKjxuiXklFs8FZdzLCDUPhvesHaArRYpU2xhoQYqBsV0KWs8myHsRrbzrJVEr69bmgH3lvqXq/GpijhqatW12WwFuh6j1SgLvqzTouVjt+9cp3Qfa75L90qQ95Kd/Ft/0TJfYAtsBqKMWHEsdo7FJm7aE8+CauTJYo8BmyF5QO4i2VUsitN0hkcJdPilaq9Ww+vrWCplhUmuyLj5muab6RmiBQ2kOjhm1Mg4Z6B+7CYvE6Gq3kpR7lD2mQ0sGKd0bZWhc0rzy5aflPbMxRiD/qAY7fqzrkYakkvYr9ifgcggV9NxdKyZ1BDA8emS1/uTqQPgVBXPpNhJjiGAJn10h4kRnVZgXaxVLpxJBmdkk= vagrant@vagrant
+     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzfugSZeZzVVCk45oRDeipXd5jMKjelVQZ b1t@vagrant
