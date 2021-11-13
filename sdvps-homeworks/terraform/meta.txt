@@ -1,0 +1,7 @@
+users:
+ - name: b1t
+   groups: sudo
+   shell: /bin/bash
+   sudo: ['ALL=(ALL) NOPASSWD:ALL']
+   ssh-authorized-keys:
+     - ssh-rsa  AAAAB3NzaC1yc2EAAAADAQABAAABgQDZSp+OXA9TD6csL9SVyybqzk+mAZ+iHd7BPPUW9Jh0Vm3cAkKPxrnQ6DkF8Pyw9vW+WlVzFLaL+qhf2N1OuswJc7FpZ06hkjoXHbjdj8zUFf2Um5FHYF80dqOfK7XtjrsaDc9KUDPRbHRoBc+UlrcFddnZ4ApxNxwcU74YmgqC38TP1dpDEgwj/of5Uu9h6B3J6XPBXNN0h7m3zywRsBfJ3Te9v07tyQvUH3/iNgBKn5a5R24F6VHuiga7bOPDgLi3tPNMokdk1lSjdryuK3qH2v807RKgEn7lwl7ax3YkphBRlHjyZQFPYpghy+18MdP/SpsmxMIYT2OvoSVGY8htPKVnC3y6vpiZMQS6/Okzoj2EC8FuHZ3FWLrwrVLoccy/Hl+naI1uGERJZFB+0pVjpeez46ls2w6l3aai6Qh1t4bed9c5pYkmI5Yka/G8mHaeq2xTYRTgSFUaXE9UF4BzkIFCrN9OW3ZB815RpV8a/NPUMF4GCbpSgisTJfEF898= root@vagrant 
