@@ -18,7 +18,7 @@ provider "yandex" {
 #<настройки провайдера>
 
 resource "yandex_compute_instance" "vm-1" {
-  name = "master"
+  name = "VM01"
 
   resources {
     cores  = 2
@@ -42,7 +42,7 @@ resource "yandex_compute_instance" "vm-1" {
 }
 
 resource "yandex_compute_instance" "vm-2" {
-  name = "worker"
+  name = "VM02"
 
   resources {
     cores  = 2
@@ -74,4 +74,19 @@ resource "yandex_vpc_subnet" "subnet-1" {
   zone           = "ru-central1-a"
   network_id     = yandex_vpc_network.network-1.id
   v4_cidr_blocks = ["192.168.100.0/24"]
+}
+
+resource "yandex_lb_target_group" "foo" {
+  name      = "my-target-group"
+  region_id = "ru-central1-a"
+
+  target {
+    subnet_id = "${yandex_vpc_subnet.network-1.id}"
+    address   = "${yandex_compute_instance.vm-1.network_interface.0.ip_address}"
+  }
+
+  target {
+    subnet_id = "${yandex_vpc_subnet.my-subnet.id}"
+    address   = "${yandex_compute_instance.vm-2.network_interface.0.ip_address}"
+  }
 }
