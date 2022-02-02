@@ -81,12 +81,12 @@ resource "yandex_lb_target_group" "foo" {
   region_id = "ru-central1-a"
 
   target {
-    subnet_id = "${yandex_vpc_subnet.network-1.id}"
+    subnet_id = "${yandex_vpc_subnet.subnet-1.id}"
     address   = "${yandex_compute_instance.vm-1.network_interface.0.ip_address}"
   }
 
   target {
-    subnet_id = "${yandex_vpc_subnet.network-1.id}"
+    subnet_id = "${yandex_vpc_subnet.subnet-1.id}"
     address   = "${yandex_compute_instance.vm-2.network_interface.0.ip_address}"
   }
 }
