@@ -1,0 +1,12 @@
+#cloud-config
+users:
+  - name: parallels
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3FMGBULziuiBEIHxwIt/UmRsGtGHaYoW09xaQmE8Urwq2EfnsG7aNJkxKNXH5sO7qo7sKY76x2Uqtphcivil5fdAkcaJe2lF+GeAEZAKrTiL11Pbr3X18vvCWl786AaMPHvnTMS5QtkeG0K21wMkrYVQrXZKBoRhcq4CmcGl9475/mP2xCjaCGlc7v4vhbC/HgZarLVDt7rjsBO3wLe5OwKwM/KxEZiiJJ9ewdsZSpwFfwCFnKdOsTsYoIDMkEXpITKqhlzcUpglICvFvxpNObcYlil5N7j+cOrhwlaBRZ39OBbcZD0Qe/EywdHH/P7Pjk4hYLdutlZVnMc4zaiFeGQ0dam+2qkU0Ku72sN/CHsWfwYoCYSVcWVm+eOxJ4mHzT6kYhl/xSmxOK8GVvz4l6IvtXCYiyhkOd+U0b3YAfXBKUs3PD/xR2ejtsAYdithUQdFqaRVnum7NSH3jkcmMJ5vicZb4egZfQrnu47CHCMVxEyFlbu8iKP/h59opqws= admin@fhmkp5k89pctmg56cvur
+
+
+#      - ssh-rsa AAAAB3Nza......OjbSMRX user@example.com
+#      - ssh-rsa AAAAB3Nza......Pu00jRN user@desktop
