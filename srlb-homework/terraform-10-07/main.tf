@@ -18,7 +18,7 @@ provider "yandex" {
 #<настройки провайдера>
 
 resource "yandex_compute_instance" "vm-1" {
-  name = "VM01"
+  name = "node-1"
 
   resources {
     cores  = 2
@@ -42,7 +42,7 @@ resource "yandex_compute_instance" "vm-1" {
 }
 
 resource "yandex_compute_instance" "vm-2" {
-  name = "VM02"
+  name = "node-2"
 
   resources {
     cores  = 2
