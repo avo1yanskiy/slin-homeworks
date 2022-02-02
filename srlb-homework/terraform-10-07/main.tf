@@ -78,7 +78,7 @@ resource "yandex_vpc_subnet" "subnet-1" {
 
 resource "yandex_lb_target_group" "foo" {
   name      = "my-target-group"
-  region_id = "ru-central1-a"
+  region_id = "ru-central1"
 
   target {
     subnet_id = "${yandex_vpc_subnet.subnet-1.id}"
