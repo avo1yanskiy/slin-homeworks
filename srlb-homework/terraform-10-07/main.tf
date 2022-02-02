@@ -90,3 +90,27 @@ resource "yandex_lb_target_group" "foo" {
     address   = "${yandex_compute_instance.vm-2.network_interface.0.ip_address}"
   }
 }
+
+resource "yandex_lb_network_load_balancer" "foo" {
+  name = "my-network-load-balancer"
+
+  listener {
+    name = "my-listener"
+    port = 8080
+    external_address_spec {
+      ip_version = "ipv4"
+    }
+  }
+
+  attached_target_group {
+    target_group_id = "${yandex_lb_target_group.my-target-group.id}"
+
+    healthcheck {
+      name = "http"
+      http_options {
+        port = 8080
+        path = "/ping"
+      }
+    }
+  }
+}
