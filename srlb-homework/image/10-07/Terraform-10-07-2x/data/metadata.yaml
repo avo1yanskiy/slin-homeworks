@@ -1,0 +1,24 @@
+#cloud-config
+users:
+  - name: parallels
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpkCmLG5TacVP2ND56Xkel8pdmu1w0DXvle4rHt+OXOBsgq+Hp9MxZQshDTeIhX47wMg7anr1cq4SLy6Nid1sgIHXCWX6uNbX/ZHNQiO6EpUZ1ll8wTZcV4DRqTI7JgdqRuEqXpxCGc9ovyndzx2mBaO+ZvPYVMc9jgWKG9eUyZXeoEe2XB2wI4B31jqehG6Hp15fkMzIZed5+3D3I5C2d1zIfOLDx2XvuNhbWf4pGU04HyH1EWXriD8BWIJN4L3kgSCuFy3s3TjqgmQJZeTDc1i2gvNYo/cyqpjCyOIroXq7ZtcfzpQ9aoa+P/1dousnEdkEHMZiTPkot8hGLlauQdBMrAnU5q23kVzekf1aQkAzC2aMUUH7IwEzM6vLvzOJLRiAdeMHHlfCZI0CUsnj+z7T1lFp/QEYFKlKNv1vZ+K7aGFeTNDY1zZ3aZE42AgP6zGLCACt6HNr2JQ2MAktZo0C8VYiql/JANtXuCNDXTthfqsJmuCYndDdbK9rYKi0= parallels@terra 
+
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+apt:
+  preserve_sources_list: true
+
+packages:
+  - nginx
+
+runcmd:
+  - [ systemctl, nginx-reload ]
+  - [ systemctl, enable, nginx.service ]
+  - [ systemctl, start, --no-block, nginx.service ]
+  - [ sh, -c, "echo $(hostname | cut -d '.' -f 1 ) > /var/www/html/index.html" ]

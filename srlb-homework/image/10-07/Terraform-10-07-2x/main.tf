@@ -15,8 +15,6 @@ provider "yandex" {
 
 
 
-#<настройки провайдера>
-
 resource "yandex_compute_instance" "vm-1" {
   name = "node-1"
 
@@ -27,7 +25,7 @@ resource "yandex_compute_instance" "vm-1" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd87kbts7j40q5b9rpjr"
+      image_id = "fd8mfc6omiki5govl68h"
     }
   }
 
@@ -35,10 +33,8 @@ resource "yandex_compute_instance" "vm-1" {
     subnet_id = yandex_vpc_subnet.subnet-1.id
     nat       = true
   }
-
   metadata = {
-    user-data = "${file("./meta.txt")}"
-    user_data = "${file("./data/install_apache.sh")}"
+    user-data = "${file("data/metadata.yaml")}"
   }
 }
 
@@ -52,7 +48,7 @@ resource "yandex_compute_instance" "vm-2" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd87kbts7j40q5b9rpjr"
+      image_id = "fd8mfc6omiki5govl68h"
     }
   }
 
@@ -60,9 +56,8 @@ resource "yandex_compute_instance" "vm-2" {
     subnet_id = yandex_vpc_subnet.subnet-1.id
     nat       = true
   }
-
   metadata = {
-    user-data = "${file("./meta.txt")}"
+    user-data = "${file("data/metadata.yaml")}"
   }
 }
 
