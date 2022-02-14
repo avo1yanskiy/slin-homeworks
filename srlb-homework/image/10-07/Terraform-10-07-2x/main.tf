@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "yandex" {
-  token     = "-L6EQ"
+  token     = "AQAAAABYXzwUAATuwScIJzAPv0G3nSn89s-L6EQ"
   cloud_id  = "b1gkdhnrl4d9t6mveu21"
   folder_id = "b1guvngenjnqosl63v2v"
   zone      = "ru-central1-a"
@@ -33,8 +33,10 @@ resource "yandex_compute_instance" "vm-1" {
     subnet_id = yandex_vpc_subnet.subnet-1.id
     nat       = true
   }
-  metadata = {
-    user-data = "${file("data/metadata.yaml")}"
+
+metadata = {
+    ssh-keys  = "ubuntu:${file(var.public_key_path)}"
+    user-data = file("data/metadata.yaml")
   }
 }
 
@@ -57,7 +59,8 @@ resource "yandex_compute_instance" "vm-2" {
     nat       = true
   }
   metadata = {
-    user-data = "${file("data/metadata.yaml")}"
+    ssh-keys  = "ubuntu:${file(var.public_key_path)}"
+    user-data = file("data/metadata.yaml")
   }
 }
 
