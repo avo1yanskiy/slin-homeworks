@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - /docker_volume/v1_6_2/:/var/backup
+    ports:
+      - 3306
